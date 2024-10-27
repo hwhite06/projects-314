@@ -111,7 +111,7 @@ def compare_Aa(AA1, AA2):
         return f"\nThe amino acid chains are identical."
     else:
         codon_match = r'\b\w{3}\b' # This is the regular expression that will check for exactly 3 characters within both of the AA chains that match. 
-        match_1 = re.findall(codon_match,AA1)
+        match_1 = re.findall(codon_match,AA1) # This will automatically catch all of the amino acids in the chain.
         match_2 = re.findall(codon_match, AA2)
         matches = set(match_1) & set(match_2) # This will combine the matches that are within both chains to be displayed in one set.
         return f"\nThe matching amino acids bewteen the two samples are: {matches}"
@@ -126,10 +126,8 @@ print(DNA_sample_3) # This sample is random with 3 errors.
 
 AA_sample_1 = main_Aa("DNA_Random_Sample_1.txt") 
 AA_sample_2 = main_Aa("DNA_Random_Sample_2.txt")
-
 AA_compare_1 = compare_Aa(AA_sample_1, AA_sample_2)
 AA_compare_2 = compare_Aa(AA_sample_1, AA_sample_1)
-
 print("\nAA chain 1 compared to AA chain 2:", AA_compare_1) # Comparison of amino acid chains 1 and 2.
 print("\nAA chain 1 compared to AA chain 1:", AA_compare_2) # Comparison of amino acid chains 1 and 1. 
 
