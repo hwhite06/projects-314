@@ -110,7 +110,7 @@ def compare_Aa(AA1, AA2):
     if AA1 == AA2:
         return f"\nThe amino acid chains are identical."
     else:
-        codon_match = r'\b\w{3}\b' # This is the regular expression that will check for exactly 3 characters within both of the AA chains that match. 
+        codon_match = r'\b\w{3}\b' # This is the regular expression that will check for exactly 3 characters within both of the AA chains. 
         match_1 = re.findall(codon_match,AA1) # This will automatically catch all of the amino acids in the chain.
         match_2 = re.findall(codon_match, AA2)
         matches = set(match_1) & set(match_2) # This will combine the matches that are within both chains to be displayed in one set.
