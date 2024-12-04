@@ -1,0 +1,10 @@
+LICENSE
+README.txt
+pyproject.toml
+src/hwgs/_init_.py
+src/hwgs/genome_sequencer.py
+src/hwgs.egg-info/PKG-INFO
+src/hwgs.egg-info/SOURCES.txt
+src/hwgs.egg-info/dependency_links.txt
+src/hwgs.egg-info/requires.txt
+src/hwgs.egg-info/top_level.txt
