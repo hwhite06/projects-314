@@ -135,10 +135,10 @@ def main_two(file_path):
             sample_Aa = translation(sample_rna)
             return (sample_Aa)
     except FileNotFoundError: 
-        print (f"File not found: {file_path}")
+        return (f"File not found: {file_path}")
 
-# The compare function will compare two amino acid chains. This function will read through both chains and collect
-# the same amino acid in the same locations of both chains. 
+# The compare function will compare two amino acid chains. This function will read through both chains and collect the amino acids
+# present in both chains. 
 def compare(AA1, AA2):
     if AA1 == AA2:
         print (f"\nThe amino acid chains are identical.")
