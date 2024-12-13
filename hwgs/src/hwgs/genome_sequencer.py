@@ -29,6 +29,16 @@ codon_chart = {
     'ggu': 'Gly ', 'ggc': 'Gly ', 'gga': 'Gly ', 'ggg': 'Gly ',
 }
 
+def menu(): 
+    choice = input("Please specify number of smaples, enter 1/2")
+    if choice == "1":
+        Sample_1_1 = input("Please enter file path:")
+        main(Sample_1_1)
+    if choice == "2":
+        Sample_1_2 = input("Please enter file path for sample 1:")
+        Sample_2_2 = input("Please enter file path for sample 2:")
+        main_Aa(Sample_1_2, Sample_2_2)
+
 # First I created a funciton that would verify the validity of the DNA sample. 
 # This would catch any incorrectly entered nucleotides and return a message asking for the errors
 # to be corrected before continuing. 
