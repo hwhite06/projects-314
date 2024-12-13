@@ -1,4 +1,5 @@
-import re 
+import re
+import os 
 # First I created a dictionary that defines the matching amino acid associated with 
 # every codon possibility in an RNA sequence. There are some codons that will result 
 # in the end of the amino acid chain, those are denoted with the key "stop". 
@@ -72,25 +73,21 @@ def translation(rna_String):
 
 # This main function takes a text file and runs all of the necessary functions at once. 
 # This function will return all of the information about each sample at once. 
-def main():
-    while True:
-        # Prompt the user for a file path
-        file_path = input("Please enter the path to the DNA file: ")
 
-        try:
-            with open(file_path) as file:
-                data = file.read()
-            # If the file is valid, process the data
-            if dna_check(data):
-                print(f"\nSample extracted from: {file_path}\nPlease fix errors within DNA sample. {errors}")
-            else:
-                sample_rna = transcription(data)
-                Up_sample_rna = sample_rna.upper()  # This will turn the RNA sample to uppercase for display purposes. 
-                sample_Aa = translation(sample_rna)
-                print(f"\nSample extracted from: {file_path}\nDNA sample is valid. \n RNA sample: {Up_sample_rna} \nAmino acid chain: {sample_Aa}")
-                break  # Exit the loop if everything is valid
-        except FileNotFoundError:
-            print(f"File not found: {file_path}. Please try again.")
+def main(file_path):
+    test_rna = ""
+    try:
+        with open(file_path) as file:
+            data = file.read()
+        if dna_check(data):
+            return (f"\nSample extracted from: {file_path}\nPlease fix errors within DNA sample. {errors}")
+        else:
+            sample_rna = transcription(data)
+            Up_sample_rna = sample_rna.upper() # This will turn the rna sample to uppercase for display purposes. 
+            sample_Aa = translation(sample_rna)
+            return f"\nSample extracted from: {file_path}\nDNA sample is valid. \n RNA sample: {Up_sample_rna} \nAmino acid chain: {sample_Aa}"
+    except FileNotFoundError: 
+        return f"File not found: {file_path}" # This is an error I included for if the file is not found. 
 
 # I created a function similar to main that will only return the amino acid chain, I did this in order
 # to compare two amino acid chains directly, while still keeping a main function that will return everything with a single call. 
@@ -129,4 +126,3 @@ def compare_Aa(AA1, AA2):
     else:
         return "\nNo matching amino acids in the same positions."
  
-DNA_sample_1 = main()
