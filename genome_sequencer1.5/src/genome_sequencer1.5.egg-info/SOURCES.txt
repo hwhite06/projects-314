@@ -1,0 +1,8 @@
+LICENSE
+README.txt
+pyproject.toml
+src/genome_sequencer1.5.egg-info/PKG-INFO
+src/genome_sequencer1.5.egg-info/SOURCES.txt
+src/genome_sequencer1.5.egg-info/dependency_links.txt
+src/genome_sequencer1.5.egg-info/requires.txt
+src/genome_sequencer1.5.egg-info/top_level.txt

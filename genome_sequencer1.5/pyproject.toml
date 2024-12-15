@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genome_sequencer1.5"
+version = "1.5"
+authors = [
+    {name= "Holly White", email = "hwhite06@rams.shepherd.edu" }
+]
+description = "A simple genome sequencer utility" 
+readme = "README.txt"
+requires-python = ">=3.8"
+classifiers = [
+     "Programming language :: Python :: 3",
+     "License :: OSI approved :: MIT License",
+     "Operating System :: OS Independent"
+]
+
+dependencies = [ 
+        "re",
+        "matplotlib.pyplot"]
+
+[project.urls]
+Homepage = "https://github.com/hwhite06/projects-314"
+Issues = "https://github.com/hwhite06/projects-314/issues"
